@@ -5,19 +5,22 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": ">=7.2.5",
+        "php": "^8.0",
         "ext-memcached": "*",
+        "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
-        "guzzlehttp/guzzle": "^6.3",
-        "laravel/framework": "^7.15.0",
-        "laravel/tinker": "^2.4.0",
+        "guzzlehttp/guzzle": "^7.0.1",
+        "laravel/framework": "^8.12",
+        "laravel/tinker": "^2.5",
         "lcobucci/jwt": "^3.2"
     },
     "require-dev": {
-        "fzaninotto/faker": "~1.4",
-        "laravel/homestead": "^10.8.1",
-        "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "^8.5"
+        "facade/ignition": "^2.5",
+        "fakerphp/faker": "^1.9.1",
+        "laravel/sail": "^1.0.1",
+        "mockery/mockery": "^1.4.2",
+        "nunomaduro/collision": "^5.0",
+        "phpunit/phpunit": "^9.3.3"
     },
     "config": {
         "preferred-install": "dist",

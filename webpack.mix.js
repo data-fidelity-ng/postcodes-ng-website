@@ -1,7 +1,7 @@
 let mix = require('laravel-mix');
 const InlineEnviromentVariablesPlugin = require('inline-environment-variables-webpack-plugin');
 if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').load();
+    require('dotenv').config();
   }
 
 /*

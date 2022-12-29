@@ -92,5 +92,6 @@
 		
 	},
 	"addons": [],
-	"buildpacks": []
+	"buildpacks": [],
+  "stack": "heroku-22"
 }

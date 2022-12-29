@@ -8,9 +8,9 @@
 
 
 <div itemscope itemtype="http://schema.org/WebSite">
-    <link itemprop="url" href="http://www.postcodes.ng/about"/>
+    <link itemprop="url" href="http://www.postcodes.naijaz.com/about"/>
     <meta itemprop="name" content="About"/>
-    <meta itemprop="description" content="Your one stop destination for all things postcodes in Nigeria"/>
+    <meta itemprop="description" content="Lookup, Search, and Find Nigerian Postcodes"/>
 </div>
 <div id="npc-page">
     <div id="header">
@@ -36,7 +36,7 @@
                 </p>
 
                 <p>
-                In Nigeria the postcodes system was introduced by NIPOST (Nigerian Postal Service) in the year 2000, and since then has not fully  gained ground.
+                In Nigeria the postcodes system was introduced by NIPOST (<a href="https://www.nipost.gov.ng" target="_blank">Nigerian Postal Service</a>) in the year 2000, and since then has not fully  gained ground.
                 </p>
 
                 <p>
