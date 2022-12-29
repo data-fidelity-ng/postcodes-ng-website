@@ -92,13 +92,5 @@
 		
 	},
 	"addons": [],
-	"buildpacks": [
-    {
-      "url": "heroku/php"
-    },
-    {
-      "url": "heroku/nodejs"
-    }
-  ],
-  "stack": "heroku-22"
+	"buildpacks": []
 }

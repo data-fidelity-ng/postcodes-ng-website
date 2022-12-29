@@ -2,15 +2,11 @@
 
 namespace App\Http\Helpers;
 
-use Lcobucci\JWT\Token\Parser;
+use Lcobucci\JWT\ValidationData;
+use Lcobucci\JWT\Parser;
 use Lcobucci\JWT\Signer\Hmac\Sha256;
-use Lcobucci\JWT\Signer\Key\InMemory;
-use Lcobucci\JWT\Token\Builder;
-use Lcobucci\JWT\Encoding\JoseEncoder;
-use Lcobucci\JWT\Encoding\ChainedFormatter;
-use Lcobucci\JWT\Validation\Validator;
-use Lcobucci\JWT\Validation\Constraint\SignedWith;
-use DateTimeImmutable;
+use Lcobucci\JWT\Builder;
+use Illuminate\Support\Facades\Log;
 
 class AjaxHelper {
     public static function generateWebJWT() {
@@ -23,20 +19,25 @@ class AjaxHelper {
 
     public static function validateJWT($jwtTokenString, $type) {
         $jwtSecret = config('auth.jwt_secret');
+        $jwtId = config('auth.jwt_id');
+        $jwtIssuer = $type == 'web' ? 'http://www.postcodes.ng' : 'http://www.postcodes.ng/api';
+        $jwtAudience = 'http://www.postcodes.ng/api';
 
-        $token = (new Parser(new JoseEncoder()))->parse((string) $jwtTokenString);
+        $token = (new Parser())->parse((string) $jwtTokenString);
 
         # ensure the jwt token isn't expired
-        $validator = new Validator(); // It will use the current time to validate (iat, nbf and exp)
+        $data = new ValidationData(); // It will use the current time to validate (iat, nbf and exp)
+        $data->setIssuer($jwtIssuer );
+        $data->setAudience($jwtAudience);
+        $data->setId($jwtId);
 
-        # verify the iat, nbf, and exp
-        // if (! $validator->validate($token, new StrictValidAt())) {
-        //     return false;
-        // }
+        if (!$token->validate($data)) {
+            return false;
+        }
 
         # verify the jwt signature
         $signer = new Sha256();
-        if (! $validator->validate($token, new SignedWith($signer, InMemory::plainText($jwtSecret)))) {
+        if (!$token->verify($signer, $jwtSecret)) {
             return false;
         }
 
@@ -68,22 +69,18 @@ class AjaxHelper {
 
     private static function buildJWT($issuer, $audience, $expireInSeconds) {
         $signer = new Sha256();
-        $now   = new DateTimeImmutable();
 
         $jwtSecret = config('auth.jwt_secret');
         $jwtId = config('auth.jwt_id');
 
-        $chainedFormatter = ChainedFormatter::default();
-        $builder = new Builder(new JoseEncoder(), $chainedFormatter);
-
-        $token = $builder->issuedBy($issuer) // Configures the issuer (iss claim)
-                                ->permittedFor($audience) // Configures the audience (aud claim)
-                                ->identifiedBy($jwtId, true) // Configures the id (jti claim), replicating as a header item
-                                ->issuedAt($now) // Configures the time that the token was issue (iat claim)
-                                ->canOnlyBeUsedAfter($now) // Configures the time that the token can be used (nbf claim)
-                                ->expiresAt($now->modify('+' . strval($expireInSeconds) . ' second')) // Configures the expiration time of the token (exp claim)
-                                ->getToken($signer, InMemory::plainText($jwtSecret)) // Retrieves the generated token
-                                ->toString();
+        $token = (new Builder())->setIssuer($issuer) // Configures the issuer (iss claim)
+                                ->setAudience($audience) // Configures the audience (aud claim)
+                                ->setId($jwtId, true) // Configures the id (jti claim), replicating as a header item
+                                ->setIssuedAt(time()) // Configures the time that the token was issue (iat claim)
+                                ->setNotBefore(time()) // Configures the time that the token can be used (nbf claim)
+                                ->setExpiration(time() + $expireInSeconds) // Configures the expiration time of the token (exp claim)
+                                ->sign($signer, $jwtSecret) // creates a signature using the secret as key
+                                ->getToken(); // Retrieves the generated token
         
         return $token;
     }

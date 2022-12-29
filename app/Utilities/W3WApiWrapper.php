@@ -35,8 +35,8 @@ class W3WApiWrapper
 
     public function __construct(CommonFunctions $commonFunctions)
     {
-        $this->baseUri = config('services.w3w_api.url');
-        $this->apiKey = config('services.w3w_api.key');
+        $this->baseUri = env("W3W_API_BASE_URL");
+        $this->apiKey = env("W3W_API_KEY");
         $this->httpClient = new HttpClient($this->baseUri);
         $this->commonFunctions = $commonFunctions;
     }
