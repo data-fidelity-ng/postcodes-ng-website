@@ -34,8 +34,8 @@ class PostcodeApiWrapper
 
     public function __construct(CommonFunctions $commonFunctions)
     {
-        $this->baseUri = config('services.postcode_api.url');
-        $this->apiKey = config('services.postcode_api.key');
+        $this->baseUri = env("POSTCODE_API_BASE_URL");
+        $this->apiKey = env("NPC_API_KEY");
         $this->httpClient = new HttpClient($this->baseUri);
         $this->commonFunctions = $commonFunctions;
     }
