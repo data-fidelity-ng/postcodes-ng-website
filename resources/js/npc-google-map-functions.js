@@ -3,7 +3,7 @@ var lga = '';
 var infoWindow = null;
 var npcMarkers = [];
 var markerImage = '/img/geolocation-marker.png';
-var nigeriaAdminLevel2Geojson = 'https://opendata.arcgis.com/datasets/6bb5e3eb654645ae944a697208b830ff_0.geojson';
+var nigeriaAdminLevel2Geojson = 'https://services3.arcgis.com/BU6Aadhn6tbBEdyk/arcgis/rest/services/NGA_State_Boundaries_V2/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson';
 
 initNpcMap = function () {
     var abuja = {lat: 9.027522, lng: 7.240537};
@@ -46,7 +46,7 @@ initNpcMap = function () {
         content: getInfoWindowContentTemplate()
     });
     clearEntityNames();
-    setEntityNames(feature.getProperty('ADM1_NAME'), feature.getProperty('ADM2_NAME'));
+    setEntityNames(feature.getProperty('statename'), feature.getProperty('ADM2_NAME'));
     infoWindow.open(map, marker)
     getWha3WordsAddress(latLng.lat(), latLng.lng());
 
