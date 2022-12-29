@@ -17,7 +17,7 @@ A Site showcasing Nigeria postcode lookup proof of concept
         -u "$(id -u):$(id -g)" \
         -v "$(pwd):/var/www/html" \
         -w /var/www/html \
-        laravelsail/php80-composer:latest \
+        laravelsail/php81-composer:latest \
         composer install --ignore-platform-reqs
     ```
 * Configure a shell alias for the `sail` command. To do this add the below line to your shell configuration file (such as `~/.zshrc` or `~/.bashrc`) and then restart your terminal.
