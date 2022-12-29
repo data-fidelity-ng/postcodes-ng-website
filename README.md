@@ -17,12 +17,13 @@ A Site showcasing Nigeria postcode lookup proof of concept
         -u "$(id -u):$(id -g)" \
         -v "$(pwd):/var/www/html" \
         -w /var/www/html \
-        laravelsail/php81-composer:latest \
+        laravelsail/php80-composer:latest \
         composer install --ignore-platform-reqs
     ```
 * Configure a shell alias for the `sail` command. To do this add the below line to your shell configuration file (such as `~/.zshrc` or `~/.bashrc`) and then restart your terminal.
     `alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'`
-* Run `sail up`. This creates the docker container for the project if run the first time.
+* Run `sail up -d`. This creates the docker container for the project if run the first time.
 * Run `sail npm ci`
 * Run `sail npm run watch-poll`
 * Once it's up, browse to `http://localhost:80/`
+* To stop the application run `sail stop`
