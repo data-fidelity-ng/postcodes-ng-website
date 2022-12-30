@@ -41,7 +41,7 @@ return [
     ],
 
     'w3w_api' => [
-        'key' => env('W3W_API_KEY'), 
+        'key' => env('W3W_API_KEY'),
         'url' => env('W3W_API_BASE_URL'),
     ],
 
