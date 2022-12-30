@@ -13,7 +13,7 @@
 @include('nav.nav')
 
     <div itemscope itemtype="http://schema.org/WebSite">
-        <link itemprop="url" href="http://www.postcodes.ng/contact"/>
+        <link itemprop="url" href="http://www.postcodes.naijaz.com/contact"/>
         <meta itemprop="name" content="Contact"/>
         <meta itemprop="description" content="Contact Postcodes dot NG"/>
     </div>
@@ -99,7 +99,7 @@
 
                             <div class="npc-contact-detail">
                                 <div class="npc-flex-col-c-m">
-                                    <div class="flex-w size1 p-b-47">
+                                    <!-- <div class="flex-w size1 p-b-47">
 
                                         <div class="npc-flex-col size2">
                                             <span class="txt1 p-b-20">
@@ -110,7 +110,7 @@
                                                 16 Alaenyi St, Owerri, Imo State 460221 Nigeria
                                             </span>
                                         </div>
-                                    </div>
+                                    </div> -->
 
                                     <!-- <div class="dis-flex size1 p-b-47">
 
@@ -133,7 +133,7 @@
                                         </span>
 
                                             <span class="txt3">
-                                            info@postcodes.ng
+                                            info@postcodes.naijaz.com
                                         </span>
                                         </div>
                                     </div>
