@@ -36,7 +36,7 @@
                 </p>
 
                 <p>
-                In Nigeria the postcodes system was introduced by NIPOST (<a href="https://www.nipost.gov.ng" target="_blank">Nigerian Postal Service</a>) in the year 2000. The data we show here is owned by the Nigerian Postal Service. We are in now way trying to infringe on NIPOST's mandate, but instead simply trying to help make the postcode information more accessible and readily available.
+                In Nigeria the postcodes system was introduced by NIPOST (<a href="https://www.nipost.gov.ng" target="_blank">Nigerian Postal Service</a>) in the year 2000. The data we show here is owned by the Nigerian Postal Service. We are in no way trying to infringe on NIPOST's mandate, but instead simply trying to help make the postcode information more accessible and readily available.
                 </p>
 
                 <p>
