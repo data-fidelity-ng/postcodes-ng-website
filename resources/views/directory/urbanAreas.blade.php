@@ -39,7 +39,7 @@
                                         {{ $postcode }}
                                     @endforeach
                                 </td>
-                                <td><a href="{{route('streetsDirectory', ['stateSlug' => $urbanArea->stateSlug, 'lgaSlug' => $urbanArea->urbanTownSlug, 'urbanAreaSlug' => $urbanArea->urbanAreaSlug])}}">View Streets</a></td>
+                                <td><a href="{{route('streetsDirectory', ['stateSlug' => $urbanArea->stateSlug, 'urbanTownSlug' => $urbanArea->urbanTownSlug, 'urbanAreaSlug' => $urbanArea->urbanAreaSlug])}}">View Streets</a></td>
                             </tr>
                         @endforeach
                     </tbody>
