@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-<link rel="icon" href="{{ asset('img/postcodes_ng_map_pin2.png') }}" type="image/gif" sizes="20x20">
+<link rel="icon" href="{{ asset('img/postcodes_ng_map_pin2.png', true) }}" type="image/gif" sizes="20x20">
 
 <!-- CSRF Token -->
 <meta name="csrf-token" content="{{ csrf_token() }}">
