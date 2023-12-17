@@ -66,5 +66,5 @@
 @endsection
 
 @push('scripts')
-    <script src="{{ asset('js/npc-postcodeReverse-page-functions.js') }}"></script>
+    <script src="{{ mix('js/npc-postcodeReverse-page-functions.js') }}"></script>
 @endpush
