@@ -148,5 +148,5 @@
 @endsection
 
 @push('scripts')
-    <script src="{{ asset('js/npc-contact.js') }}"></script>
+    <script src="{{ mix('js/npc-contact.js') }}"></script>
 @endpush

@@ -66,5 +66,5 @@
 @endsection
 
 @push('scripts')
-    <script src="{{ asset('js/npc-postcodeFinder-page-functions.js') }}"></script>
+    <script src="{{ mix('js/npc-postcodeFinder-page-functions.js') }}"></script>
 @endpush
