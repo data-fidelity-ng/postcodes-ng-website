@@ -18,6 +18,9 @@
         "APP_URL": {
             "required": true
         },
+        "ASSET_URL": {
+          "required": true
+        },
         "POSTCODE_API_BASE_URL": {
             "required": true
         },
