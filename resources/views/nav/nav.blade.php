@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="{{route('home')}}">
-                    <img src="{{ asset('img/postcodes_ng_logo_small.png') }}" width="180" height="20" alt="postcodes.ng pin logo"/>
+                    <img src="{{ asset('img/postcodes_ng_logo_small.png', true) }}" width="180" height="20" alt="postcodes.ng pin logo"/>
                     
                 </a>
             </div>
